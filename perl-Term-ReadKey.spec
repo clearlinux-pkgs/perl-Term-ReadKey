@@ -4,7 +4,7 @@
 #
 Name     : perl-Term-ReadKey
 Version  : 2.37
-Release  : 2
+Release  : 3
 URL      : https://cpan.metacpan.org/authors/id/J/JS/JSTOWE/TermReadKey-2.37.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/J/JS/JSTOWE/TermReadKey-2.37.tar.gz
 Summary  : 'Change terminal modes, and perform non-blocking reads.'
@@ -72,7 +72,7 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.26.1/x86_64-linux-thread-multi/Term/ReadKey.pm
+/usr/lib/perl5/vendor_perl/5.28.0/x86_64-linux-thread-multi/Term/ReadKey.pm
 
 %files dev
 %defattr(-,root,root,-)
@@ -80,4 +80,4 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.26.1/x86_64-linux-thread-multi/auto/Term/ReadKey/ReadKey.so
+/usr/lib/perl5/vendor_perl/5.28.0/x86_64-linux-thread-multi/auto/Term/ReadKey/ReadKey.so
