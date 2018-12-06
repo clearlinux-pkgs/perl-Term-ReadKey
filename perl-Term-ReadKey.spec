@@ -4,7 +4,7 @@
 #
 Name     : perl-Term-ReadKey
 Version  : 2.37
-Release  : 4
+Release  : 5
 URL      : https://cpan.metacpan.org/authors/id/J/JS/JSTOWE/TermReadKey-2.37.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/J/JS/JSTOWE/TermReadKey-2.37.tar.gz
 Summary  : 'Change terminal modes, and perform non-blocking reads.'
