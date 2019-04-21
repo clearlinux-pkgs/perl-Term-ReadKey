@@ -4,10 +4,10 @@
 #
 Name     : perl-Term-ReadKey
 Version  : 2.38
-Release  : 8
+Release  : 9
 URL      : https://cpan.metacpan.org/authors/id/J/JS/JSTOWE/TermReadKey-2.38.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/J/JS/JSTOWE/TermReadKey-2.38.tar.gz
-Summary  : 'Change terminal modes, and perform non-blocking reads.'
+Summary  : Provides simple control over terminal driver modes
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
 Requires: perl-Term-ReadKey-lib = %{version}-%{release}
@@ -22,6 +22,7 @@ Summary: dev components for the perl-Term-ReadKey package.
 Group: Development
 Requires: perl-Term-ReadKey-lib = %{version}-%{release}
 Provides: perl-Term-ReadKey-devel = %{version}-%{release}
+Requires: perl-Term-ReadKey = %{version}-%{release}
 
 %description dev
 dev components for the perl-Term-ReadKey package.
