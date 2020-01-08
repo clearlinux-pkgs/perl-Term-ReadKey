@@ -4,13 +4,13 @@
 #
 Name     : perl-Term-ReadKey
 Version  : 2.38
-Release  : 9
+Release  : 10
 URL      : https://cpan.metacpan.org/authors/id/J/JS/JSTOWE/TermReadKey-2.38.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/J/JS/JSTOWE/TermReadKey-2.38.tar.gz
-Summary  : Provides simple control over terminal driver modes
+Summary  : 'Change terminal modes, and perform non-blocking reads.'
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
-Requires: perl-Term-ReadKey-lib = %{version}-%{release}
+Requires: perl-Term-ReadKey-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 
 %description
@@ -20,7 +20,6 @@ Term::ReadKey 2.36 - Change terminal modes, and perform non-blocking reads.
 %package dev
 Summary: dev components for the perl-Term-ReadKey package.
 Group: Development
-Requires: perl-Term-ReadKey-lib = %{version}-%{release}
 Provides: perl-Term-ReadKey-devel = %{version}-%{release}
 Requires: perl-Term-ReadKey = %{version}-%{release}
 
@@ -28,22 +27,24 @@ Requires: perl-Term-ReadKey = %{version}-%{release}
 dev components for the perl-Term-ReadKey package.
 
 
-%package lib
-Summary: lib components for the perl-Term-ReadKey package.
-Group: Libraries
+%package perl
+Summary: perl components for the perl-Term-ReadKey package.
+Group: Default
+Requires: perl-Term-ReadKey = %{version}-%{release}
 
-%description lib
-lib components for the perl-Term-ReadKey package.
+%description perl
+perl components for the perl-Term-ReadKey package.
 
 
 %prep
 %setup -q -n TermReadKey-2.38
+cd %{_builddir}/TermReadKey-2.38
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
+export LANG=C.UTF-8
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
 make  %{?_smp_mflags}
@@ -53,7 +54,7 @@ else
 fi
 
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
@@ -73,12 +74,12 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/x86_64-linux-thread-multi/Term/ReadKey.pm
 
 %files dev
 %defattr(-,root,root,-)
 /usr/share/man/man3/Term::ReadKey.3
 
-%files lib
+%files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/x86_64-linux-thread-multi/auto/Term/ReadKey/ReadKey.so
+/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/Term/ReadKey.pm
+/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/auto/Term/ReadKey/ReadKey.so
